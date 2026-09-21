@@ -1,0 +1,54 @@
+// Design Tokens. Prefer Typora internal theme variables, fall back to literals.
+// Convention: literals only appear in this file (as var() fallbacks); component styles must not contain hardcoded color values.
+// Lengths (spacing/size) are written directly as rem at their usage sites, not tokenised.
+:root {
+  // output window chrome
+  --typ-cbr-color-titlebar-shadow: rgba(0, 0, 0, 0.09);
+
+  // typography
+  --typ-cbr-font-mono: var(--monospace, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  --typ-cbr-font-size: 0.85em;
+  --typ-cbr-line-height: 1.5;
+
+  // colors
+  --typ-cbr-color-text: var(--text-color, #333333);
+  --typ-cbr-color-text-muted: var(--control-text-color, #6a6a6a);
+  --typ-cbr-color-bg: var(--bg-color, #ffffff);
+  --typ-cbr-color-border: var(--table-border-color, var(--panel-border-color, #d8d8d8));
+  --typ-cbr-color-hover: var(--item-hover-bg-color, rgba(0, 0, 0, 0.06));
+  --typ-cbr-color-active: var(--active-file-bg-color, rgba(0, 0, 0, 0.12));
+  --typ-cbr-color-primary: var(--primary-color, #3b8eea);
+  --typ-cbr-color-primary-text: var(--primary-btn-text-color, #ffffff);
+  --typ-cbr-color-info: var(--primary-color, #3b8eea);
+  --typ-cbr-color-debug: var(--primary-color, #11a8cd);
+  --typ-cbr-color-warn: #d99000;
+  --typ-cbr-color-success: #0dbc79;
+  --typ-cbr-color-error: rgb(var(--typ-color-red-3, 245, 34, 45));
+
+  // console panel (DevTools-like output surface)
+  --typ-cbr-color-console-bg: var(--bg-color);
+  --typ-cbr-color-console-sep: rgba(0, 0, 0, 0.07);
+  --typ-cbr-color-console-row-hover: rgba(0, 0, 0, 0.045);
+  --typ-cbr-color-console-warn-bg: rgba(217, 144, 0, 0.12);
+  --typ-cbr-color-console-error-bg: rgba(245, 34, 45, 0.08);
+}
+
+// Dark mode only overrides --typ-cbr-*, never Typora internal variables.
+@media (prefers-color-scheme: dark) {
+  :root {
+    --typ-cbr-color-text: var(--text-color, #dedede);
+    --typ-cbr-color-text-muted: var(--control-text-color, #9a9a9a);
+    --typ-cbr-color-bg: var(--bg-color, #1e1e1e);
+    --typ-cbr-color-border: var(--table-border-color, var(--panel-border-color, #3f3f3f));
+    --typ-cbr-color-hover: var(--item-hover-bg-color, rgba(255, 255, 255, 0.08));
+    --typ-cbr-color-active: var(--active-file-bg-color, rgba(255, 255, 255, 0.16));
+    --typ-cbr-color-warn: #e5a50a;
+    --typ-cbr-color-success: #23d18b;
+    --typ-cbr-color-console-bg: rgba(0, 0, 0, 0.18);
+    --typ-cbr-color-console-sep: rgba(255, 255, 255, 0.09);
+    --typ-cbr-color-console-row-hover: rgba(255, 255, 255, 0.06);
+    --typ-cbr-color-console-warn-bg: rgba(229, 165, 10, 0.14);
+    --typ-cbr-color-console-error-bg: rgba(245, 34, 45, 0.15);
+    --typ-cbr-color-titlebar-shadow: rgba(0, 0, 0, 0.45);
+  }
+}

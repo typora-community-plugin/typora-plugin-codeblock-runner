@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "settings": {
+    "languages": {
+      "js": true,
+      "node": true,
+      "ts": true,
+      "html": true,
+      "rust": true,
+      "kotlin": true,
+      "haskell": true,
+      "crystal": true,
+      "v": true,
+      "go": true,
+      "java": true,
+      "bash": true,
+      "c": true,
+      "cpp": true,
+      "csharp": true,
+      "python": true,
+      "powershell": true,
+      "dart": true,
+      "julia": true,
+      "lua": true,
+      "php": true,
+      "python2": true,
+      "r": true,
+      "swift": true,
+      "zig": true
+    },
+    "runtimes": {
+      "html": "iframe"
+    }
+  }
+}

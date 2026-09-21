@@ -1,0 +1,24 @@
+{
+  "run": "运行",
+  "stop": "停止",
+  "clearOutput": "清除输出",
+  "loading": "加载中",
+  "unsupportedLanguage": "不支持的语言：{{lang}}",
+  "languageDisabled": "该语言已在设置中禁用：{{lang}}",
+  "settings": {
+    "languages": "语言",
+    "languagesHint": "选择允许运行的语言。远程语言会将代码发送到在线 playground，默认关闭。",
+    "htmlRuntimeBrowserDesc": "在 closed Shadow DOM 中渲染：内联 <script> 不执行，样式限定在代码块内。",
+    "htmlRuntimeIframeDesc": "在 sandboxed iframe 中渲染：脚本可执行，与笔记隔离（opaque origin，无法同源访问）。",
+    "jsRuntimeLocalDesc": "在渲染进程的异步函数中执行：屏蔽了 BOM、DOM、Typora 相关全局变量，但不是安全沙箱；循环 5 秒超时，但无法完全防止死循环。",
+    "jsRuntimeOneCompilerDesc": "将代码发送到 OneCompiler 的 JavaScript playground：与 Typora 隔离，需要联网。",
+    "tsRuntimeLocalDesc": "使用 Sucrase 转译后作为 JavaScript 在渲染进程中运行；循环 5 秒超时，但无法完全防止死循环。",
+    "tsRuntimeOneCompilerDesc": "将代码发送到 OneCompiler 的 TypeScript playground：与 Typora 隔离，需要联网。",
+    "nodeRuntimeLocalDesc": "在进程内通过 Node 的 `vm` 执行：CommonJS 风格作用域，可使用 `require`，无需联网；循环 5 秒超时，但无法完全防止死循环。",
+    "nodeRuntimeOneCompilerDesc": "将代码发送到 OneCompiler 的 Node.js playground：与 Typora 隔离，需要联网。"
+  },
+  "commands": {
+    "runCodeBlock": "运行光标所在代码块",
+    "clearAllOutputs": "清除所有代码块输出"
+  }
+}

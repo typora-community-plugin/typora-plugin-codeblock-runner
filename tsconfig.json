@@ -9,14 +9,18 @@
     "module": "ESNext",
     "allowJs": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "isolatedModules": true,
     "strictNullChecks": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }

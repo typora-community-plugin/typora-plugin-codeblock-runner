@@ -1,3 +1,4 @@
-.typ-example-cls {
-  color: red;
-}
+@use './styles/variables';
+@use './styles/settings';
+@use './components/Play';
+@use './components/Spin';

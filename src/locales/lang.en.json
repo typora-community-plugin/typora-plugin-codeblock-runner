@@ -1,0 +1,24 @@
+{
+  "run": "Run",
+  "stop": "Stop",
+  "clearOutput": "Clear output",
+  "loading": "Loading",
+  "unsupportedLanguage": "Unsupported language: {{lang}}",
+  "languageDisabled": "Language is disabled in settings: {{lang}}",
+  "settings": {
+    "languages": "Languages",
+    "languagesHint": "Choose which languages can run. Remote languages send your code to an online playground and are off by default.",
+    "htmlRuntimeBrowserDesc": "Renders in a closed Shadow DOM: inline <script> does not run, and styles stay scoped to the block.",
+    "htmlRuntimeIframeDesc": "Renders in a sandboxed iframe: scripts run, isolated from the note (opaque origin, no same-origin access).",
+    "jsRuntimeLocalDesc": "Runs in an async function in the renderer: BOM, DOM and Typora globals are blocked, but this is not a security sandbox. Loops time out after 5s, which cannot fully prevent infinite loops.",
+    "jsRuntimeOneCompilerDesc": "Sends the code to the OneCompiler JavaScript playground: isolated from Typora, requires network access.",
+    "tsRuntimeLocalDesc": "Transpiled with Sucrase, then run as JavaScript in the renderer. Loops time out after 5s, which cannot fully prevent infinite loops.",
+    "tsRuntimeOneCompilerDesc": "Sends the code to the OneCompiler TypeScript playground: isolated from Typora, requires network access.",
+    "nodeRuntimeLocalDesc": "Runs in-process through Node's `vm`: CommonJS-style scope with `require` access, no network needed. Loops time out after 5s, which cannot fully prevent infinite loops.",
+    "nodeRuntimeOneCompilerDesc": "Sends the code to the OneCompiler Node.js playground: isolated from Typora, requires network access."
+  },
+  "commands": {
+    "runCodeBlock": "Run Code Block at Cursor",
+    "clearAllOutputs": "Clear All Code Block Outputs"
+  }
+}

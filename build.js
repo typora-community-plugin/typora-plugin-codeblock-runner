@@ -3,6 +3,7 @@ import * as fs from 'node:fs/promises'
 import * as esbuild from 'esbuild'
 import typoraPlugin, { installDevPlugin, closeTypora } from 'esbuild-plugin-typora'
 import { sassPlugin } from 'esbuild-sass-plugin'
+import { solidPlugin } from 'esbuild-plugin-solid'
 
 
 const args = process.argv.slice(2)
@@ -23,9 +24,11 @@ await esbuild.build({
   outdir: 'dist',
   format: 'esm',
   bundle: true,
+  splitting: true,
   minify: IS_PROD,
   sourcemap: IS_DEV,
   plugins: [
+    solidPlugin({ dev: IS_DEV }),
     typoraPlugin({
       mode: IS_PROD ? 'production' : 'development'
     }),

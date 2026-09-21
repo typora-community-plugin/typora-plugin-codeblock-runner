@@ -1,0 +1,24 @@
+{
+  "run": "Ausführen",
+  "stop": "Stoppen",
+  "clearOutput": "Ausgabe löschen",
+  "loading": "Laden",
+  "unsupportedLanguage": "Nicht unterstützte Sprache: {{lang}}",
+  "languageDisabled": "Sprache ist in den Einstellungen deaktiviert: {{lang}}",
+  "settings": {
+    "languages": "Sprachen",
+    "languagesHint": "Wähle, welche Sprachen ausgeführt werden dürfen. Remote-Sprachen senden deinen Code an einen Online-Playground und sind standardmäßig deaktiviert.",
+    "htmlRuntimeBrowserDesc": "Wird in einem geschlossenen Shadow DOM gerendert: Inline-<script> wird nicht ausgeführt, und Stile bleiben auf den Block beschränkt.",
+    "htmlRuntimeIframeDesc": "Wird in einem sandboxed iframe gerendert: Skripte werden ausgeführt, isoliert von der Notiz (opaque origin, kein Same-Origin-Zugriff).",
+    "jsRuntimeLocalDesc": "Läuft in einer Async-Funktion im Renderer: BOM-, DOM- und Typora-Globals sind blockiert, aber dies ist keine Sicherheits-Sandbox. Schleifen laufen nach 5 s in ein Timeout, was Endlosschleifen nicht vollständig verhindert.",
+    "jsRuntimeOneCompilerDesc": "Sendet den Code an den JavaScript-Playground von OneCompiler: von Typora isoliert, benötigt Netzwerkzugriff.",
+    "tsRuntimeLocalDesc": "Wird mit Sucrase transpiliert und dann als JavaScript im Renderer ausgeführt. Schleifen laufen nach 5 s in ein Timeout, was Endlosschleifen nicht vollständig verhindert.",
+    "tsRuntimeOneCompilerDesc": "Sendet den Code an den TypeScript-Playground von OneCompiler: von Typora isoliert, benötigt Netzwerkzugriff.",
+    "nodeRuntimeLocalDesc": "Läuft prozessintern über Nodes `vm`: CommonJS-artiger Scope mit `require`-Zugriff, kein Netzwerk nötig. Schleifen laufen nach 5 s in ein Timeout, was Endlosschleifen nicht vollständig verhindert.",
+    "nodeRuntimeOneCompilerDesc": "Sendet den Code an den Node.js-Playground von OneCompiler: von Typora isoliert, benötigt Netzwerkzugriff."
+  },
+  "commands": {
+    "runCodeBlock": "Codeblock am Cursor ausführen",
+    "clearAllOutputs": "Alle Codeblock-Ausgaben löschen"
+  }
+}

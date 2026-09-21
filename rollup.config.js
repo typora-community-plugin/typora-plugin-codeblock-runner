@@ -36,8 +36,10 @@ catch (e) {
 export default defineConfig({
   input: 'src/main.ts',
   output: {
-    file: 'dist/main.js',
+    dir: 'dist',
     format: 'es',
+    entryFileNames: 'main.js',
+    chunkFileNames: 'chunk-[name]-[hash].js',
   },
   plugins: [
     replace({
@@ -46,7 +48,7 @@ export default defineConfig({
     }),
     virtual(virtualModules),
     typoraPlugin(),
-    nodeResolve(),
+    nodeResolve({ browser: true, extensions: ['.js', '.jsx', '.ts', '.tsx'] }),
     commonjs(),
     typescript({
       compilerOptions: {
@@ -56,7 +58,11 @@ export default defineConfig({
     }),
     babel({
       babelHelpers: 'bundled',
-      presets: [["@babel/preset-env", { "useBuiltIns": "entry", "corejs": 3 }]],
+      presets: [
+        ["@babel/preset-env", { "useBuiltIns": "entry", "corejs": 3 }],
+        "babel-preset-solid"
+      ],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       exclude: [
         /\bcore-js\b/,
       ],

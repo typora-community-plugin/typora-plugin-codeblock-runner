@@ -1,0 +1,12 @@
+.typ-setting-description ul.typ-cbr-setting-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1rem;
+}
+
+.typ-setting-description .typ-cbr-setting-list li + li {
+  margin-top: 0.15rem;
+}
+
+.typ-setting-description .typ-cbr-setting-list code {
+  font-family: var(--typ-cbr-font-mono);
+}
