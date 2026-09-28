@@ -4,7 +4,7 @@
 
 这是一个基于 [typora-community-plugin][core] 的 [Typora](https://typoraio.cn) 插件。受到 [Obsidian Code Runner](https://github.com/chujiu-dev/obsidian-code-runner) 启发。
 
-在笔记中直接运行 `js` / `node` / `ts` / `html` / `rust` / `kotlin` / `haskell` / `crystal` / `v` / `go` / `java` 代码块：鼠标悬浮到代码块上点击 ▶，输出便以内联方式显示在代码下方，并保留 ANSI 颜色。输出按代码内容缓存。
+在笔记中直接运行 `bash` / `c` / `cpp` / `csharp` / `crystal` / `dart` / `go` / `haskell` / `html` / `java` / `js` / `javascript` / `julia` / `kotlin` / `lua` / `node` / `php` / `powershell` / `python` / `r` / `rust` / `swift` / `ts` / `v` / `zig` 代码块：鼠标悬浮到代码块上点击 ▶，输出便以内联方式显示在代码下方，并保留 ANSI 颜色。输出按代码内容缓存。
 
 ## 预览
 
@@ -24,30 +24,30 @@
 
 | 语言 | 别名 | 运行时 | OS | 说明 |
 | --- | --- | --- | --- | --- |
-| JavaScript | `js`、`javascript` | Browser (Local) / OneCompiler (Remote) | 全平台（本地）/ Windows / Linux（OneCompiler） | 运行方式在设置中选择：**Browser (Local)** 在异步函数上下文中执行（`await` 可用）；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/javascript)。 |
-| TypeScript | `ts`、`typescript` | Browser (Local) / OneCompiler (Remote) | 全平台（本地）/ Windows / Linux（OneCompiler） | 运行方式在设置中选择：**Browser (Local)** 由 Sucrase 转译后作为 JavaScript 执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/typescript)。 |
-| Node.js | `node`、`nodejs` | Node.js VM (Local) / OneCompiler (Remote) | Windows / Linux | 运行方式在设置中选择：**Node.js VM (Local)** 用 Node 的 `vm` 编译执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/nodejs)。远程方式需要联网。 |
-| HTML | `html` | Browser (Local) | 全平台 | 运行方式在设置中选择：**Browser (Local)** 渲染在 closed Shadow DOM 中（内联 `<script>` 不会执行），**iframe (Local)** 渲染在 sandboxed iframe 中，脚本会执行。 |
-| Crystal | `crystal`、`cr` | Crystal Playground (Remote) | 全平台 | 发送到 [Crystal Playground](https://play.crystal-lang.org)，需要联网。 |
-| Go | `go`、`golang` | Go Playground (Remote) | Windows / Linux | 发送到 [Go Playground](https://go.dev/play)，需要联网。 |
-| Haskell | `hs`、`haskell` | Haskell Playground (Remote) | 全平台 | 发送到 [Haskell Playground](https://play.haskell.org)，需要联网。 |
-| Java | `java` | Java Playground (Remote) | Windows / Linux | 发送到 [Java Playground](https://dev.java/playground)。支持顶层语句、import 与类定义（Java 27 + 预览特性）。需要联网。 |
-| Kotlin | `kotlin`、`kt` | Kotlin Playground (Remote) | Windows / Linux | 发送到 [Kotlin Playground](https://play.kotlinlang.org)，需要联网。 |
-| Rust | `rust`、`rs` | Rust Playground (Remote) | 全平台 | 发送到 [Rust Playground](https://play.rust-lang.org)，需要联网。 |
-| V | `v`、`vlang` | V Playground (Remote) | Windows / Linux | 发送到 [V Playground](https://play.vlang.io)，需要联网。 |
 | Bash | `bash`、`sh` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/bash)，需要联网。 |
 | C | `c` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/c)，需要联网。 |
 | C++ | `cpp`、`cc` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/cpp)，需要联网。 |
 | C# | `csharp`、`cs` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/csharp)，需要联网。 |
+| Crystal | `crystal`、`cr` | Crystal Playground (Remote) | 全平台 | 发送到 [Crystal Playground](https://play.crystal-lang.org)，需要联网。 |
 | Dart | `dart` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/dart)，需要联网。 |
+| Go | `go`、`golang` | Go Playground (Remote) | Windows / Linux | 发送到 [Go Playground](https://go.dev/play)，需要联网。 |
+| Haskell | `hs`、`haskell` | Haskell Playground (Remote) | 全平台 | 发送到 [Haskell Playground](https://play.haskell.org)，需要联网。 |
+| HTML | `html` | Browser (Local) | 全平台 | 运行方式在设置中选择：**Browser (Local)** 渲染在 closed Shadow DOM 中（内联 `<script>` 不会执行），**iframe (Local)** 渲染在 sandboxed iframe 中，脚本会执行。 |
+| Java | `java` | Java Playground (Remote) | Windows / Linux | 发送到 [Java Playground](https://dev.java/playground)。支持顶层语句、import 与类定义（Java 27 + 预览特性）。需要联网。 |
+| JavaScript | `js`、`javascript` | Browser (Local) / OneCompiler (Remote) | 全平台（本地）/ Windows / Linux（OneCompiler） | 运行方式在设置中选择：**Browser (Local)** 在异步函数上下文中执行（`await` 可用）；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/javascript)。 |
 | Julia | `julia`、`jl` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/julia)，需要联网。 |
+| Kotlin | `kotlin`、`kt` | Kotlin Playground (Remote) | Windows / Linux | 发送到 [Kotlin Playground](https://play.kotlinlang.org)，需要联网。 |
 | Lua | `lua` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/lua)，需要联网。 |
+| Node.js | `node`、`nodejs` | Node.js VM (Local) / OneCompiler (Remote) | Windows / Linux | 运行方式在设置中选择：**Node.js VM (Local)** 用 Node 的 `vm` 编译执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/nodejs)。远程方式需要联网。 |
 | PHP | `php` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/php)，需要联网。 |
 | PowerShell | `powershell`、`ps1`、`pwsh` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/powershell)，需要联网。 |
 | Python | `python`、`py` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/python)，需要联网。 |
 | Python 2 | `python2`、`py2` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/python2)，需要联网。 |
 | R | `r` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/r)，需要联网。 |
+| Rust | `rust`、`rs` | Rust Playground (Remote) | 全平台 | 发送到 [Rust Playground](https://play.rust-lang.org)，需要联网。 |
 | Swift | `swift` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/swift)，需要联网。 |
+| TypeScript | `ts`、`typescript` | Browser (Local) / OneCompiler (Remote) | 全平台（本地）/ Windows / Linux（OneCompiler） | 运行方式在设置中选择：**Browser (Local)** 由 Sucrase 转译后作为 JavaScript 执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/typescript)。 |
+| V | `v`、`vlang` | V Playground (Remote) | Windows / Linux | 发送到 [V Playground](https://play.vlang.io)，需要联网。 |
 | Zig | `zig` | OneCompiler (Remote) | Windows / Linux | 发送到 [OneCompiler](https://onecompiler.com/zig)，需要联网。 |
 
 ## 设置
@@ -56,11 +56,11 @@
 
 | 设置项 | 取值 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| 运行语言 | 开 / 关（按语言） | 本地：开，远程：关 | 逐项开关每种语言。远程语言（`rust`、`kotlin`、`haskell`、`crystal`、`v`、`go`、`java`、`bash`、`c`、`cpp`、`csharp`、`python`、`powershell`、`php`、`lua`、`python2`、`r`、`swift`、`dart`、`julia`、`zig`）会将代码发送到在线 playground，默认关闭，需手动开启。运行已禁用的语言会在输出区提示。 |
-| HTML 运行方式 | Browser (Local) / iframe (Local) | Browser (Local) | HTML 行上的下拉选项。**Browser (Local)** 渲染在 closed Shadow DOM 中（内联 `<script>` 不会执行）；**iframe (Local)** 渲染在 sandboxed iframe 中，脚本会执行，但与笔记隔离（opaque origin，无法同源访问）。 |
-| JavaScript 运行方式 | Browser (Local) / OneCompiler (Remote) | Browser (Local) | JavaScript 行上的下拉选项。**Browser (Local)** 在渲染进程中执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/javascript)。 |
-| TypeScript 运行方式 | Browser (Local) / OneCompiler (Remote) | Browser (Local) | TypeScript 行上的下拉选项。**Browser (Local)** 由 Sucrase 转译后在渲染进程中执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/typescript)。 |
-| Node.js 运行方式 | Node.js VM (Local) / OneCompiler (Remote) | Node.js VM (Local) | Node.js 行上的下拉选项。**Node.js VM (Local)** 在进程内通过 Node 的 `vm` 执行；**OneCompiler (Remote)** 发送到 [OneCompiler](https://onecompiler.com/nodejs)。 |
+| 运行语言 | 开 / 关（按语言） | 本地：开，远程：关 | 逐项开关每种语言。远程语言默认关闭需手动开启，运行已禁用的语言会在输出区提示。详见「支持的语言」表格。 |
+| HTML 运行方式 | Browser (Local) / iframe (Local) | Browser (Local) | HTML 行上的下拉选项。详见「支持的语言」表格。 |
+| JavaScript 运行方式 | Browser (Local) / OneCompiler (Remote) | Browser (Local) | JS 行上的下拉选项。详见「支持的语言」表格。 |
+| TypeScript 运行方式 | Browser (Local) / OneCompiler (Remote) | Browser (Local) | TS 行上的下拉选项。详见「支持的语言」表格。 |
+| Node.js 运行方式 | Node.js VM (Local) / OneCompiler (Remote) | Node.js VM (Local) | Node 行上的下拉选项。详见「支持的语言」表格。 |
 
 ## 安装
 

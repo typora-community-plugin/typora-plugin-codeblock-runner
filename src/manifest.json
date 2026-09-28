@@ -1,7 +1,7 @@
 {
   "id": "typora-community-plugin.codeblock-runner",
   "name": "Codeblock Runner",
-  "description": "Run JavaScript / TypeScript / HTML / Node.js / Rust / Kotlin / Haskell / Crystal / V / Go / Java code blocks in Typora.",
+  "description": "Run Bash / C / C# / C++ / Crystal / Dart / Go / Haskell / HTML / Java / JavaScript / Julia / Kotlin / Lua / Node.js / PHP / PowerShell / Python / Python 2 / R / Rust / Swift / TypeScript / V / Zig code blocks in Typora.",
   "author": "plylrnsdy",
   "authorUrl": "https://github.com/plylrnsdy",
   "repo": "typora-community-plugin/typora-plugin-codeblock-runner",

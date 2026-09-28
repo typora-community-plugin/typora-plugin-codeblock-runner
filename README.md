@@ -2,9 +2,9 @@
 
 English | [中文](./README.zh-CN.md)
 
-This is a plugin based on [typora-community-plugin][core] for [Typora](https://typora.io). Inspired by [Obsidian Code Runner](https://github.com/chujiu-dev/obsidian-code-runner).
+This is a [Typora](https://typoraio.cn) plugin based on [typora-community-plugin][core]. Inspired by [Obsidian Code Runner](https://github.com/chujiu-dev/obsidian-code-runner).
 
-Run `js` / `node` / `ts` / `html` / `rust` / `kotlin` / `haskell` / `crystal` / `v` / `go` / `java` code blocks right inside your notes. Hover a code block and click ▶, and its output shows up inline below the code, with ANSI colors preserved. Results are cached by code content.
+Run `bash` / `c` / `cpp` / `csharp` / `crystal` / `dart` / `go` / `haskell` / `html` / `java` / `js` / `javascript` / `julia` / `kotlin` / `lua` / `node` / `php` / `powershell` / `python` / `r` / `rust` / `swift` / `ts` / `v` / `zig` code blocks directly in your notes: hover over a code block and click ▶, the output will be displayed inline below the code with ANSI colors preserved. Output is cached by code content.
 
 ## Preview
 
@@ -12,72 +12,72 @@ Run `js` / `node` / `ts` / `html` / `rust` / `kotlin` / `haskell` / `crystal` / 
 
 ## Usage
 
-| Action | How |
+| Action | Method |
 | --- | --- |
-| Run a code block | Hover the code block and click ▶ |
-| Cancel the running state | Click ⏹ while it is running (see Known Limitations) |
-| Clear one block's output | Click the clear button in the output header |
-| Run the block at the cursor | `Alt+Ctrl+R`, or <kbd>F1</kbd> → "Run Code Block at Cursor" |
-| Clear every block's output | <kbd>F1</kbd> → "Clear All Code Block Outputs" |
+| Run a code block | Hover over the code block and click ▶ |
+| Cancel running state | Click ⏹ while running (see "Known Limitations") |
+| Clear output of a single block | Click the clear button at the top of the output area |
+| Run the code block containing the cursor | `Alt+Ctrl+R`, or <kbd>F1</kbd> → "Run Code Block at Cursor" |
+| Clear all code block outputs | <kbd>F1</kbd> → "Clear All Code Block Outputs" |
 
 ## Supported Languages
 
 | Language | Aliases | Runtime | OS | Notes |
 | --- | --- | --- | --- | --- |
-| JavaScript | `js`, `javascript` | Browser (Local) / OneCompiler (Remote) | All platforms (local) / Windows & Linux (OneCompiler) | Runtime is chosen in settings: **Browser (Local)** runs in an async function context (so `await` works); **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/javascript). |
-| TypeScript | `ts`, `typescript` | Browser (Local) / OneCompiler (Remote) | All platforms (local) / Windows & Linux (OneCompiler) | Runtime is chosen in settings: **Browser (Local)** transpiles with Sucrase and runs as JavaScript; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/typescript). |
-| Node.js | `node`, `nodejs` | Node.js VM (Local) / OneCompiler (Remote) | Windows / Linux | Runtime is chosen in settings: **Node.js VM (Local)** compiles with Node's `vm`; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/nodejs). Requires network access for the remote runtime. |
-| HTML | `html` | Browser (Local) | All platforms | Runtime is chosen in settings: **Browser (Local)** uses a closed Shadow DOM (inline `<script>` does not run), **iframe (Local)** uses a sandboxed iframe where scripts do run. |
-| Crystal | `crystal`, `cr` | Crystal Playground (Remote) | All platforms | Sent to the [Crystal Playground](https://play.crystal-lang.org). Requires network access. |
-| Go | `go`, `golang` | Go Playground (Remote) | Windows / Linux | Sent to the [Go Playground](https://go.dev/play). Requires network access. |
-| Haskell | `hs`, `haskell` | Haskell Playground (Remote) | All platforms | Sent to the [Haskell Playground](https://play.haskell.org). Requires network access. |
-| Java | `java` | Java Playground (Remote) | Windows / Linux | Sent to the [Java Playground](https://dev.java/playground). Runs top-level statements, imports and classes (Java 27 + preview). Requires network access. |
-| Kotlin | `kotlin`, `kt` | Kotlin Playground (Remote) | Windows / Linux | Sent to the [Kotlin Playground](https://play.kotlinlang.org). Requires network access. |
-| Rust | `rust`, `rs` | Rust Playground (Remote) | All platforms | Sent to the [Rust Playground](https://play.rust-lang.org). Requires network access. |
-| V | `v`, `vlang` | V Playground (Remote) | Windows / Linux | Sent to the [V Playground](https://play.vlang.io). Requires network access. |
-| Bash | `bash`, `sh` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/bash). Requires network access. |
-| C | `c` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/c). Requires network access. |
-| C++ | `cpp`, `cc` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/cpp). Requires network access. |
-| C# | `csharp`, `cs` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/csharp). Requires network access. |
-| Dart | `dart` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/dart). Requires network access. |
-| Julia | `julia`, `jl` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/julia). Requires network access. |
-| Lua | `lua` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/lua). Requires network access. |
-| PHP | `php` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/php). Requires network access. |
-| PowerShell | `powershell`, `ps1`, `pwsh` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/powershell). Requires network access. |
-| Python | `python`, `py` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/python). Requires network access. |
-| Python 2 | `python2`, `py2` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/python2). Requires network access. |
-| R | `r` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/r). Requires network access. |
-| Swift | `swift` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/swift). Requires network access. |
-| Zig | `zig` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/zig). Requires network access. |
+| Bash | `bash`, `sh` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/bash), requires internet. |
+| C | `c` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/c), requires internet. |
+| C++ | `cpp`, `cc` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/cpp), requires internet. |
+| C# | `csharp`, `cs` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/csharp), requires internet. |
+| Crystal | `crystal`, `cr` | Crystal Playground (Remote) | All platforms | Sent to [Crystal Playground](https://play.crystal-lang.org), requires internet. |
+| Dart | `dart` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/dart), requires internet. |
+| Go | `go`, `golang` | Go Playground (Remote) | Windows / Linux | Sent to [Go Playground](https://go.dev/play), requires internet. |
+| Haskell | `hs`, `haskell` | Haskell Playground (Remote) | All platforms | Sent to [Haskell Playground](https://play.haskell.org), requires internet. |
+| HTML | `html` | Browser (Local) | All platforms | Execution mode selectable in settings: **Browser (Local)** renders in closed Shadow DOM (inline `<script>` tags won't execute), **iframe (Local)** renders in a sandboxed iframe where scripts will execute. |
+| Java | `java` | Java Playground (Remote) | Windows / Linux | Sent to [Java Playground](https://dev.java/playground). Supports top-level statements, imports, and class definitions (Java 27 + preview features). Requires internet. |
+| JavaScript | `js`, `javascript` | Browser (Local) / OneCompiler (Remote) | All platforms (local) / Windows / Linux (OneCompiler) | Execution mode selectable in settings: **Browser (Local)** executes within an async function context (`await` is available); **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/javascript). |
+| Julia | `julia`, `jl` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/julia), requires internet. |
+| Kotlin | `kotlin`, `kt` | Kotlin Playground (Remote) | Windows / Linux | Sent to [Kotlin Playground](https://play.kotlinlang.org), requires internet. |
+| Lua | `lua` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/lua), requires internet. |
+| Node.js | `node`, `nodejs` | Node.js VM (Local) / OneCompiler (Remote) | Windows / Linux | Execution mode selectable in settings: **Node.js VM (Local)** compiles and executes using Node's `vm`; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/nodejs). Remote execution requires internet. |
+| PHP | `php` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/php), requires internet. |
+| PowerShell | `powershell`, `ps1`, `pwsh` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/powershell), requires internet. |
+| Python | `python`, `py` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/python), requires internet. |
+| Python 2 | `python2`, `py2` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/python2), requires internet. |
+| R | `r` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/r), requires internet. |
+| Rust | `rust`, `rs` | Rust Playground (Remote) | All platforms | Sent to [Rust Playground](https://play.rust-lang.org), requires internet. |
+| Swift | `swift` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/swift), requires internet. |
+| TypeScript | `ts`, `typescript` | Browser (Local) / OneCompiler (Remote) | All platforms (local) / Windows / Linux (OneCompiler) | Execution mode selectable in settings: **Browser (Local)** is transpiled by Sucrase then executed as JavaScript; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/typescript). |
+| V | `v`, `vlang` | V Playground (Remote) | Windows / Linux | Sent to [V Playground](https://play.vlang.io), requires internet. |
+| Zig | `zig` | OneCompiler (Remote) | Windows / Linux | Sent to [OneCompiler](https://onecompiler.com/zig), requires internet. |
 
 ## Settings
 
 Open "Settings → Plugins → Codeblock Runner".
 
-| Setting | Values | Default | Description |
+| Setting | Values | Default | Notes |
 | --- | --- | --- | --- |
-| Run languages | on / off (per language) | local: on, remote: off | Toggle each language on or off. Remote languages (`rust`, `kotlin`, `haskell`, `crystal`, `v`, `go`, `java`, `bash`, `c`, `cpp`, `csharp`, `python`, `powershell`, `php`, `lua`, `python2`, `r`, `swift`, `dart`, `julia`, `zig`) send code to an online playground and stay off until you enable them. Running a disabled language reports it in the output. |
-| HTML runtime | Browser (Local) / iframe (Local) | Browser (Local) | The select on the HTML row. **Browser (Local)** renders output in a closed Shadow DOM (inline `<script>` does not run); **iframe (Local)** renders it in a sandboxed iframe where scripts run, isolated from the note (opaque origin, no same-origin access). |
-| JavaScript runtime | Browser (Local) / OneCompiler (Remote) | Browser (Local) | The select on the JavaScript row. **Browser (Local)** runs in the renderer; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/javascript). |
-| TypeScript runtime | Browser (Local) / OneCompiler (Remote) | Browser (Local) | The select on the TypeScript row. **Browser (Local)** transpiles with Sucrase then runs in the renderer; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/typescript). |
-| Node.js runtime | Node.js VM (Local) / OneCompiler (Remote) | Node.js VM (Local) | The select on the Node.js row. **Node.js VM (Local)** runs in-process via Node's `vm`; **OneCompiler (Remote)** sends code to [OneCompiler](https://onecompiler.com/nodejs). |
+| Language toggles | On / Off (per language) | Local: On, Remote: Off | Toggle each language on/off individually. Remote languages are disabled by default and must be manually enabled; running a disabled language will show a prompt in the output area. See the "Supported Languages" table for details. |
+| HTML execution mode | Browser (Local) / iframe (Local) | Browser (Local) | Dropdown option on the HTML row. See the "Supported Languages" table for details. |
+| JavaScript execution mode | Browser (Local) / OneCompiler (Remote) | Browser (Local) | Dropdown option on the JS row. See the "Supported Languages" table for details. |
+| TypeScript execution mode | Browser (Local) / OneCompiler (Remote) | Browser (Local) | Dropdown option on the TS row. See the "Supported Languages" table for details. |
+| Node.js execution mode | Node.js VM (Local) / OneCompiler (Remote) | Node.js VM (Local) | Dropdown option on the Node row. See the "Supported Languages" table for details. |
 
-## Install
+## Installation
 
-1. Install [typora-community-plugin][core]
-2. Open "Settings → Plugin Marketplace" search "Codeblock Runner" then install it.
+1. First install [typora-community-plugin][core]
+2. Open "Settings → Plugin Marketplace", search for "Codeblock Runner" and install.
 
 ## Known Limitations
 
-- In `js` / `ts` blocks, BOM/DOM/network and Typora globals (`window`, `document`, `fetch`, `reqnode`, `editor`, …) are shadowed as `undefined`. This is a guardrail, not a security sandbox: constructor chains, indirect `eval` and dynamic `import()` still reach the real globals, and `eval` itself cannot be shadowed under strict mode.
-- `js` / `ts` / `node` blocks have a 5-second timeout: braced loop bodies throw `Loop Timeout` once it elapses, and a hung `await` is caught by the outer race. Unbraced single-statement loop bodies get no check, so such infinite loops can still freeze Typora.
-- TypeScript is transpiled without type checking, so type errors do not stop execution.
-- In a `node` block, Node.js's built-in module names work, but relative paths are not resolved against the note's folder.
-- `node` blocks only run on Windows and Linux. Typora does not expose Node.js on macOS, so the block reports an error there.
-- Inline `<script>` inside an `html` block is not executed with the **Browser (Local)** runtime (closed Shadow DOM); switch the HTML runtime to **iframe (Local)** to run scripts.
-- `rust` / `kotlin` / `hs` / `crystal` / `v` / `go` / `java` blocks run on the corresponding online playground, so they need a network connection and are unavailable offline. On Windows / Linux requests go through Node (CORS is not an issue); on macOS they fall back to `fetch` and may be rejected if the playground does not allow cross-origin requests.
-- On macOS the `kotlin` / `v` / `go` / `java` settings rows are hidden and these languages cannot be enabled: their playgrounds send no CORS headers, so the renderer's `fetch` fallback is rejected.
-- ⏹ cancels the running state of the UI but cannot interrupt code that is already executing.
-- "Clear All Code Block Outputs" also purges the cached output of every block, including notes that are not currently open.
+- In `js` / `ts` code blocks, BOM/DOM/network and Typora-related globals (`window`, `document`, `fetch`, `reqnode`, `editor`, etc.) are masked as `undefined`. This is a guardrail against accidental misuse, not a security sandbox: constructor chains, indirect `eval`, and dynamic `import()` can still access real globals, and `eval` cannot be masked in strict mode.
+- `js` / `ts` / `node` code blocks have a 5-second timeout: loop bodies with curly braces will throw `Loop Timeout` after the timeout expires; pending `await`s are caught by an outer overall timeout. Single-statement loop bodies without curly braces won't inject checks, so infinite loops may still freeze Typora.
+- TypeScript transpilation performs no type checking; type errors will not interrupt execution.
+| `node` code blocks: Node.js built-in module names work, but relative paths are not resolved relative to the note's directory.
+- `node` code blocks only run on Windows and Linux. Typora does not expose Node on macOS (`reqnode`), so it will error directly on that platform.
+- Inline `<script>` tags in `html` code blocks do not execute under **Browser (Local)** mode (closed Shadow DOM); switch HTML execution mode to **iframe (Local)** for scripts to run.
+- `rust` / `kotlin` / `hs` / `crystal` / `v` / `go` / `java` code blocks run on their respective online playgrounds, require internet, and are unavailable offline. On Windows / Linux requests are made via Node (no CORS issues); on macOS it falls back to `fetch`, which may be rejected if the playground doesn't allow cross-origin requests.
+- On macOS, the settings for `kotlin` / `v` / `go` / `java` will be hidden and cannot be enabled: these playgrounds don't return CORS headers, so the render process `fetch` fallback will be rejected.
+- ⏹ can only cancel the UI's running state, not interrupt code that is already executing.
+- "Clear All Code Block Outputs" will clear the output cache for **every** code block, including those in notes that are currently closed.
 
 [core]: https://github.com/typora-community-plugin/typora-community-plugin
