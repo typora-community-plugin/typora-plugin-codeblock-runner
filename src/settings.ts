@@ -28,12 +28,11 @@ export type LanguageId =
   | 'julia'
   | 'zig'
 
-/** Display / iteration order, local languages first. */
+/** Display / iteration order, sorted alphabetically by display name. */
 export const LANGUAGE_IDS: LanguageId[] = [
-  'js', 'ts', 'html', 'node',
-  'crystal', 'go', 'haskell', 'java', 'kotlin', 'rust', 'v',
-  'bash', 'c', 'cpp', 'csharp', 'python', 'powershell',
-  'dart', 'julia', 'lua', 'php', 'python2', 'r', 'swift', 'zig',
+  'bash', 'c', 'cpp', 'csharp', 'crystal', 'dart', 'go', 'haskell',
+  'html', 'java', 'js', 'julia', 'kotlin', 'lua', 'node', 'php',
+  'powershell', 'python', 'python2', 'r', 'rust', 'swift', 'ts', 'v', 'zig',
 ]
 
 /** Backends that execute inside Typora. Enabled by default. */
